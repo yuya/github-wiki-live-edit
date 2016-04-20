@@ -18,6 +18,8 @@ var style       = document.createElement("style");
 var watchScroll = false;
 var writeHeight, previewHeight;
 
+var updatePreviewFunc = debounce(updatePreview, 500);
+
 function debounce(func, wait) {
   var timeout, args, context, timestamp, result;
   var later = function () {
@@ -85,12 +87,18 @@ function toggleLiveEdit() {
     removeStyle();
     toggleBtn.title = "Start LiveEdit";
     toggleBtnInner.innerText = "Start";
+
+    editor.removeEventListener("keyup", updatePreviewFunc);
+    functionHelp.removeEventListener("click", setContentHeight);
   }
   else {
     applyStyle();
     setContentHeight(true);
     toggleBtn.title = "Quit LiveEdit";
     toggleBtnInner.innerText = "Quit";
+
+    editor.addEventListener("keyup", updatePreviewFunc);
+    functionHelp.addEventListener("click", setContentHeight);
   }
 }
 
@@ -158,8 +166,8 @@ function updatePreview() {
 function addListener() {
   window.addEventListener("load", updatePreview);
   window.addEventListener("resize", debounce(refresh, 500));
-  editor.addEventListener("keyup", debounce(updatePreview, 500));
 
+  editor.addEventListener("keyup", updatePreviewFunc);
   toggleBtn.addEventListener("click", toggleLiveEdit);
   functionHelp.addEventListener("click", setContentHeight);
 }
