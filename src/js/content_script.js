@@ -73,13 +73,16 @@ function removeStyle() {
 }
 
 function appendToggleButton() {
+  var headerForm = headerActions.querySelector("form");
+  var targetElement = headerForm ? headerForm : headerActions.getElementsByClassName("btn")[0];
+
   toggleBtn.className = "btn btn-sm btn-toggle-live-edit";
   toggleBtn.title = "Quit LiveEdit";
   toggleBtnInner.innerText = "Quit";
   toggleBtnInner.style.backgroundImage = "url(" + chrome.extension.getURL('img/icon-16@2x.png') + ")";
 
   toggleBtn.appendChild(toggleBtnInner);
-  headerActions.insertBefore(toggleBtn, headerActions.getElementsByClassName("btn")[0]);
+  headerActions.insertBefore(toggleBtn, targetElement);
 }
 
 function toggleLiveEdit() {
