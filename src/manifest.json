@@ -1,7 +1,7 @@
 {
   "name": "Github Wiki LiveEdit",
   "description": "Adding live editing features into Github wiki.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "background": {
     "scripts": ["js/background.js"]
   },
