@@ -73,7 +73,7 @@ function removeStyle() {
 }
 
 function appendToggleButton() {
-  var headerForm = headerActions.querySelector("form");
+  var headerForm = headerActions ? headerActions.querySelector("form") : document.querySelector(".gh-header-title");
   var targetElement = headerForm ? headerForm : headerActions.getElementsByClassName("btn")[0];
 
   toggleBtn.className = "btn btn-sm btn-toggle-live-edit";
@@ -82,7 +82,18 @@ function appendToggleButton() {
   toggleBtnInner.style.backgroundImage = "url(" + chrome.extension.getURL('img/icon-16@2x.png') + ")";
 
   toggleBtn.appendChild(toggleBtnInner);
-  headerActions.insertBefore(toggleBtn, targetElement);
+
+  if (headerActions) {
+    headerActions.insertBefore(toggleBtn, targetElement);
+  }
+  else {
+    var _ghHeader = document.querySelector(".gh-header");
+    var _headerActions = document.createElement("div");
+
+    _headerActions.className = "gh-header-actions";
+    _headerActions.appendChild(toggleBtn);
+    _ghHeader.insertBefore(_headerActions, targetElement);
+  }
 }
 
 function toggleLiveEdit() {
