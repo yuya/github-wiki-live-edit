@@ -1,74 +1,74 @@
-.edit-mode {
+.__github-wiki-live-edit__ {
   padding: 30px 30px 0;
 }
-.edit-mode .container {
+.__github-wiki-live-edit__ .container {
   width: auto;
 }
-.edit-mode .header,
-.edit-mode .gh-header-actions a[href$='_new'],
-.edit-mode .pagehead,
-.edit-mode .comment-form-head,
-.edit-mode #gollum-editor-edit-summary .jaws,
-.edit-mode .site-footer-container {
+.__github-wiki-live-edit__ .header,
+.__github-wiki-live-edit__ .gh-header-actions a[href$='_new'],
+.__github-wiki-live-edit__ .pagehead,
+.__github-wiki-live-edit__ .comment-form-head,
+.__github-wiki-live-edit__ #gollum-editor-edit-summary .jaws,
+.__github-wiki-live-edit__ .site-footer-container {
   display: none;
 }
 
-.btn-toggle-live-edit span {
+.__github-wiki-live-edit--btn-toggle-live-edit__ span {
   padding-left: 20px;
   background-repeat: no-repeat;
   background-position: 0 50%;
   background-size: 16px 16px;
 }
-.edit-mode .gollum-editor-title-field {
+.__github-wiki-live-edit__ .gollum-editor-title-field {
   box-sizing: border-box;
   width: 50%;
   padding-right: 24px;
 }
-.edit-mode #gollum-editor-help {
+.__github-wiki-live-edit__ #gollum-editor-help {
   position: relative;
   margin-top: 10px;
 }
-.edit-mode .gollum-editor,
-.edit-mode .gollum-editor-function-bar,
-.edit-mode .gollum-editor-body {
+.__github-wiki-live-edit__ .gollum-editor,
+.__github-wiki-live-edit__ .gollum-editor-function-bar,
+.__github-wiki-live-edit__ .gollum-editor-body {
   margin: 0;
   padding: 0;
 }
-.edit-mode .gh-header,
-.edit-mode .wiki-wrapper .wiki-content .gollum-editor-title-field {
+.__github-wiki-live-edit__ .gh-header,
+.__github-wiki-live-edit__ .wiki-wrapper .wiki-content .gollum-editor-title-field {
   margin-bottom: 10px;
 }
-.edit-mode .gollum-editor-function-bar {
+.__github-wiki-live-edit__ .gollum-editor-function-bar {
   border-bottom: none;
 }
 
-.edit-mode .previewable-comment-form .write-content,
-.edit-mode .previewable-comment-form .preview-content {
+.__github-wiki-live-edit__ .previewable-comment-form .write-content,
+.__github-wiki-live-edit__ .previewable-comment-form .preview-content {
   display: block;
   box-sizing: border-box;
   width: 50%;
   margin: 30px 0 0 !important;
 }
-.edit-mode .previewable-comment-form .write-content {
+.__github-wiki-live-edit__ .previewable-comment-form .write-content {
   float: left;
   padding: 0 1px 0 0;
   background: #ddd;
 }
-.edit-mode .previewable-comment-form .preview-content {
+.__github-wiki-live-edit__ .previewable-comment-form .preview-content {
   float: right;
   position: relative;
   overflow: scroll;
 }
-.edit-mode .wiki-wrapper .wiki-content .previewable-comment-form.preview-selected .preview-content {
+.__github-wiki-live-edit__ .wiki-wrapper .wiki-content .previewable-comment-form.preview-selected .preview-content {
   padding-left: 24px;
 }
-.edit-mode .preview-content .markdown-body {
+.__github-wiki-live-edit__ .preview-content .markdown-body {
   padding-bottom: 30px;
 }
-.edit-mode .previewable-comment-form {
+.__github-wiki-live-edit__ .previewable-comment-form {
   overflow: hidden;
 }
-.edit-mode #gollum-editor-body {
+.__github-wiki-live-edit__ #gollum-editor-body {
   max-height: initial;
   margin: 0;
   padding-right: 15px;
@@ -77,7 +77,7 @@
   box-shadow: none;
   resize: none;
 }
-.edit-mode #gollum-editor-edit-summary {
+.__github-wiki-live-edit__ #gollum-editor-edit-summary {
   position: absolute;
   top: 73px;
   left: 50%;
@@ -86,19 +86,19 @@
   margin: 0;
   padding-left: 24px;
 }
-.edit-mode #gollum-editor-edit-summary .input-block {
+.__github-wiki-live-edit__ #gollum-editor-edit-summary .input-block {
   width: 100%;
 }
-.edit-mode .form-actions {
+.__github-wiki-live-edit__ .form-actions {
   position: absolute;
   top: 73px;
   right: 30px;
 }
-.edit-mode .new-discussion-timeline .previewable-comment-form .comment-body {
+.__github-wiki-live-edit__ .new-discussion-timeline .previewable-comment-form .comment-body {
   padding: 0;
   border-bottom: none;
 }
-.edit-mode .new-discussion-timeline .previewable-comment-form .comment-body > p {
+.__github-wiki-live-edit__ .new-discussion-timeline .previewable-comment-form .comment-body > p {
   display: block;
   position: absolute;
   top: 0;

@@ -1,6 +1,7 @@
 ;(function (window, document) {
 chrome.runtime.sendMessage({}, function (response) {});
 
+var CLASS_NAME     = "__github-wiki-live-edit__"
 var body           = document.body;
 var headerActions  = document.querySelector(".gh-header-actions");
 var toggleBtn      = document.createElement("div");
@@ -53,21 +54,21 @@ function debounce(func, wait) {
 
 function applyStyle() {
   var inlineCSS = "\
-    .edit-mode .new-discussion-timeline .previewable-comment-form .comment-body > p {\
+    ." + CLASS_NAME + " .new-discussion-timeline .previewable-comment-form .comment-body > p {\
       background: url(" + chrome.extension.getURL('img/loader.gif') + ");\
     }\
   ";
 
   style.innerText = inlineCSS;
   body.appendChild(style);
-  body.classList.add("edit-mode");
+  body.classList.add(CLASS_NAME);
 
   editorSummary.style.paddingRight = (40 + editorSubmit.offsetWidth) + "px";
 }
 
 function removeStyle() {
   body.removeChild(style);
-  body.classList.remove("edit-mode");
+  body.classList.remove(CLASS_NAME);
   editorSummary.style.paddingRight = "";
   editor.style.height = writeContent.style.height = previewContent.style.height = "";
 }
@@ -76,7 +77,7 @@ function appendToggleButton() {
   var headerForm = headerActions ? headerActions.querySelector("form") : document.querySelector(".gh-header-title");
   var targetElement = headerForm ? headerForm : headerActions.getElementsByClassName("btn")[0];
 
-  toggleBtn.className = "btn btn-sm btn-toggle-live-edit";
+  toggleBtn.className = "btn btn-sm __github-wiki-live-edit--btn-toggle-live-edit__";
   toggleBtn.title = "Quit LiveEdit";
   toggleBtnInner.innerText = "Quit";
   toggleBtnInner.style.backgroundImage = "url(" + chrome.extension.getURL('img/icon-16@2x.png') + ")";
@@ -97,7 +98,7 @@ function appendToggleButton() {
 }
 
 function toggleLiveEdit() {
-  if (body.classList.contains("edit-mode")) {
+  if (body.classList.contains(CLASS_NAME)) {
     removeStyle();
     toggleBtn.title = "Start LiveEdit";
     toggleBtnInner.innerText = "Start";
