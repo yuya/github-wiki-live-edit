@@ -4,7 +4,8 @@
 .__github-wiki-live-edit__ .container {
   width: auto;
 }
-.__github-wiki-live-edit__ .header,
+.__github-wiki-live-edit__ .Header,
+.__github-wiki-live-edit__ .footer,
 .__github-wiki-live-edit__ .gh-header-actions a[href$='_new'],
 .__github-wiki-live-edit__ .pagehead,
 .__github-wiki-live-edit__ .comment-form-head,
@@ -27,6 +28,9 @@
 .__github-wiki-live-edit__ #gollum-editor-help {
   position: relative;
   margin-top: 10px;
+}
+.__github-wiki-live-edit__ .gollum-editor {
+  position: relative;
 }
 .__github-wiki-live-edit__ .gollum-editor,
 .__github-wiki-live-edit__ .gollum-editor-function-bar,
@@ -57,7 +61,7 @@
 .__github-wiki-live-edit__ .previewable-comment-form .preview-content {
   float: right;
   position: relative;
-  overflow: scroll;
+  overflow: auto;
 }
 .__github-wiki-live-edit__ .wiki-wrapper .wiki-content .previewable-comment-form.preview-selected .preview-content {
   padding-left: 24px;
@@ -79,7 +83,7 @@
 }
 .__github-wiki-live-edit__ #gollum-editor-edit-summary {
   position: absolute;
-  top: 73px;
+  top: 0;
   left: 50%;
   box-sizing: border-box;
   width: 50%;
@@ -91,8 +95,8 @@
 }
 .__github-wiki-live-edit__ .form-actions {
   position: absolute;
-  top: 73px;
-  right: 30px;
+  top: 0;
+  right: 0;
 }
 .__github-wiki-live-edit__ .new-discussion-timeline .previewable-comment-form .comment-body {
   padding: 0;

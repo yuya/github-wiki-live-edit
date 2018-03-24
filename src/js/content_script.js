@@ -63,7 +63,7 @@ function applyStyle() {
   body.appendChild(style);
   body.classList.add(CLASS_NAME);
 
-  editorSummary.style.paddingRight = (40 + editorSubmit.offsetWidth) + "px";
+  editorSummary.style.paddingRight = (10 + editorSubmit.offsetWidth) + "px";
 }
 
 function removeStyle() {
